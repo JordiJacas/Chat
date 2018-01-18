@@ -1,0 +1,81 @@
+.main{
+  width:100%;
+  margin:10px auto;
+  max-width:1000px;
+}
+
+
+.articles,{
+  height:auto;
+}
+
+
+.main .articles {
+  width:50%;
+  float:left;
+  /*margin-right:1.5%;*/
+  text-align:justify;
+}
+
+.main .articles article {
+  padding:20px;
+  background: #fff;
+  margin-bottom:20px;
+  text-align:justify;
+}
+
+aside {
+  width:30%;
+  background: #fff;
+  float:left;
+  padding:20px;
+  text-align:justify;
+  box-sizing:border-box;
+}
+
+
+#aside-left{
+  float:left;
+  width: 25%;
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+#aside-right{
+  float:right;
+  width:25%;
+  height:300px;
+  margin-bottom: 10px;
+}
+
+
+.articles{
+  text-align: center;
+  margin-right: 0;
+  height: auto;
+}
+.articles header{
+  text-align: center;
+}
+.articles div{
+  margin: 0 auto;
+  width: 300px;
+  margin-bottom: 50px;
+}
+.articles h1{
+  background-color: #B82841;
+  color: white;
+}
+
+
+input[type="text"]{
+  margin: 5px 0px 10px 0px;
+}
+
+input[type="password"]{
+  margin: 5px 0px 10px 0px;
+}
+
+input[type="email"]{
+  margin: 5px 0px 10px 0px;
+}
