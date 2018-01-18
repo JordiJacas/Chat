@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Ayuntamiento de tu casa</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/styleSesion.css">
+	<meta charset="UTF-8">
+</head>
+	<header>
+		<div>
+			<img src="../img/logo.jpg" width="200px" height="200px">
+			<img src="../img/banner.jpg" width="796px" height="200px">
+		</div>
+		<nav>
+			<ul class="menu">
+				<li><a href="../index.html">Inicio</a></li>
+	            <li><a href="#">Debates</a></li>
+	            <li><a href="#">Denuncias</a></li>
+	            <li><a href="#">Intercambios</a></li>
+	            <li><a href="#">Chat</a></li>
+	            <li><a href="inicio_sesion.html" id="ini_ses">Iniciar Sesion</a></li>
+	            <li><a href="registrarse.html" id="reg">Registrarse</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section class="main">
+		<aside id="aside-left">
+			<a href="#"><p>Contenido 1</p></a>
+		</aside>
+		<section class="articles">
+			<div>
+				<header><h1>Registrarse</h1></header>
+				<form action="registrar.php" method="POST">
+					<p>
+					<label for="user_login">Email: <br>
+					<input name="email" class="input" size="20" type="email"></label>
+					</p>
+					<p>
+					<label for="user_login">Nom Usuari: <br>
+					<input name="usuario" class="input" size="20" type="text"></label>
+					</p>
+					<p><label for="user_login">Teléfono: <br><input name="usuario" class="input" size="20" type="text"></label></p>
+					<p><label for="user_login">Ciudad: <br><input name="usuario" class="input" size="20" type="text"></label></p>
+					<p><label for="user_login">Contrasenya: <br><input name="pass" class="input" value="" size="20" type="password"></label></p>
+					<p><label for="user_login">Repite la Contrasenya: <br><input name="pass1" class="input" value="" size="20" type="password"></label></p>
+					<p class="submit"><input name="login" class="button" value="Registrarse" type="submit"></p>
+				</form>
+			</div>
+		</section>
+		<aside id="aside-right">
+			<a href="#"><p>Contenido 2</p></a>
+		</aside>
+	</section>
+		<footer>
+			<p>Ayuntamiento de Cornella</p>
+		</footer>
+</body>
+</html>
