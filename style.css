@@ -1,42 +1,42 @@
-/*h1{
-  text-align: center;
+body{
+  width: 99%;
 }
-
-*/.menu {
-  background-color: red;
-
-}
-
-.menu-general li{
-  display: inline-block;
-}
-.menu-general{
-  display: inline-block;
-}
-/*
-a{
+a { 
   text-decoration: none;
-  color: black;
+  color: #000;
 }
 
-.menu-user {
-  position: relative;
-  right: 5%;
+ul{
+  list-style-type: none;
 }
 
-.menu-user li ul{
+.menu{
+  background: red;
+  height: 50px;
+}
+
+.menu-general{
+  width: 50%;
+  margin-left: 5%;
+}
+.menu-general li{
+  display: inline-block; 
+}
+
+
+.menu-user{
+  margin-right: 10%;
+}
+
+#user ul li{
   display: none;
 }
 
-.menu-user li a{
-  text-decoration: none;
-  display: block;
+#user ul li:hover{
+  display:block;
 }
 
-.menu-user ul li:hover{
-  display: block;
+#user ul:hover > li{
+  display:block;
 }
 
-.menu-user li:hover > ul{
-  display: block;
-}
