@@ -27,7 +27,8 @@ header nav {
 
 header nav ul {
   list-style:none;
-  }
+  display: inline;
+}
 
 header nav ul li {
   float:left;
@@ -55,33 +56,38 @@ footer {
 
 }
   
-p {
+p{
   font-size:90%;
 }
 
-ul.menu{
-   list-style:none;
-}
-
-ul.menu ul{
+.menu ul{
    display:none;
    list-style:none;
 }
 
-ul.menu li:hover > ul{
+.menu li:hover > ul{
    display:block;
 }
-#ini_ses{
-  position: relative;
-  margin-left:73%;
+
+nav #ini_ses{
+  width: 10%;
+  position: absolute;
   background-color: #B82841;
-  padding-left: 5px;
-  padding-right: 5px;
+  display: inline;
+  right: 20%;
+  margin-top: 0.8%;
+  margin-right: 1%;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
 }
-#reg{
-  position: relative;
-  margin-left:2%;
+
+nav #reg{
+  position: absolute;
   background-color: #B82841;
-  padding-left: 5px;
-  padding-right: 5px;
+  right: 15%;
+  margin-top: 0.8%;
+  margin-right: 5px;
+  color: #fff;
+  text-decoration: none;
 }

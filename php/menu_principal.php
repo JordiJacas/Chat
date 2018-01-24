@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
+<?php
+	session_start();
+	$pwd = $_SESSION['pwd']; 
+	$user = $_SESSION['user'];
+?>
 <head>
 	<title> Ayuntamiento de tu casa</title>
     <script type="text/javascript" src="../js/script.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/styleSesion.css">
+    <link rel="stylesheet" type="text/css" href="../css/styleInicio.css">
 	<meta charset="UTF-8">
 </head>
 	<header>
@@ -19,8 +24,10 @@
 	            <li><a href="#">Denuncias</a></li>
 	            <li><a href="#">Intercambios</a></li>
 	            <li><a href="#">Chat</a></li>
-	            <a href="inicio_sesion.html" id="ini_ses">Iniciar Sesion</a>
-	            <a href="registrarse.html" id="reg">Registrarse</a>
+	            <?php
+	            	echo "	<p id='ini_ses'>".$user."</p>";		
+	            ?>
+	            <a href='logout.php' id='reg'>Logout</a>
 			</ul>
 		</nav>
 	</header>
@@ -29,22 +36,7 @@
 			<a href="#"><p>Contenido 1</p></a>
 		</aside>
 		<section class="articles">
-			<div>
-				<header><h1>Inicio de Sesion</h1></header>
-				<form action="../php/login.php" method="POST">
-				<p>
-				<label for="user_login">Nom Usuari: <br>
-				<input name="usuario" class="input" size="20" type="text"></label>
-				</p>
-				<p>
-				<label for="user_login">Contrasenya: <br>
-				<input name="pass" class="input" value="" size="20" type="password"></label>
-				</p>
-				<p class="submit">
-				<input name="login" class="button" value="Aceptar" type="submit">
-				</p>
-				</form>
-			</div>
+
 		</section>
 		<aside id="aside-right">
 			<a href="#"><p>Contenido 2</p></a>
