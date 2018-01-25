@@ -1,37 +1,31 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+  $pwd = $_SESSION['pwd']; 
+  $user = $_SESSION['user'];
+?>
 <html>
   <head>
   <title> Ayuntamiento de tu casa</title>
     <script type="text/javascript" src="script.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
   </head>
     
   <body>
   	<header><h1>Banner</h1></header>
-        <nav class="menu">
-        	<table>
-        		<tr>
-        		<td>
-        		<ul class="menu-general">
-            	<li><a href="#" id="inicio">Inicio</a></li>
-	            <li><a href="#" id="About">Debates</a></li>
-	            <li><a href="#" id="denuncias">Denuncias</a></li>
-	            <li><a href="#" id="intervambios">Intercambios</a></li>
-	            <li><a href="#" id="chat">Chat</a></li>
-
-	          </ul>
-	          <ul class="menu-user"> 
-	          	<li>User</li>
-	          		<ul>
-	          			<li><a href="#" id="perfil"> Perfil </a></li>
-	          			<li><a href="#" id="logout"> Logout </a></li>
-	          		</ul>
-	          	</li>
-	          </ul>
-	          </td>
-	          </tr>
-        	</table>
-        </nav>
+        <nav>
+			<ul class="menu">
+				<li><a href="../../index.html">Inicio</a></li>
+	            <li><a href="debate.php">Debates</a></li>
+	            <li><a href="#">Denuncias</a></li>
+	            <li><a href="#">Intercambios</a></li>
+	            <li><a href="chat.php">Chat</a></li>
+	            <?php
+	            	echo "	<p id='ini_ses'>".$user."</p>";		
+	            ?>
+	            <a href='logout.php' id='reg'>Logout</a>
+			</ul>
+		</nav>
         <div id="debate">
 		<h3 id="title_debate" >Leave a Reply <small><a rel="nofollow" href="/cosas-a-tener-en-cuenta-al-disenar-la-web-de-un-ayuntamiento/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="http://sergiodelamo.es/wp-comments-post.php" method="post" id="commentform" class="comment-form">
 				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" value="" size="30" maxlength="245" aria-required="true" required="required" type="text"></p>

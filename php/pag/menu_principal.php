@@ -20,10 +20,10 @@
 		<nav>
 			<ul class="menu">
 				<li><a href="../index.html">Inicio</a></li>
-	            <li><a href="#">Debates</a></li>
+	            <li><a href="pag/debate.php">Debates</a></li>
 	            <li><a href="#">Denuncias</a></li>
 	            <li><a href="#">Intercambios</a></li>
-	            <li><a href="#">Chat</a></li>
+	            <li><a href="pag/chat.php">Chat</a></li>
 	            <?php
 	            	echo "	<p id='ini_ses'>".$user."</p>";		
 	            ?>
