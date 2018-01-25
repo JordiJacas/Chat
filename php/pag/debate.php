@@ -4,18 +4,21 @@
   $pwd = $_SESSION['pwd']; 
   $user = $_SESSION['user'];
 ?>
-<html>
-  <head>
-  <title> Ayuntamiento de tu casa</title>
-    <script type="text/javascript" src="script.js"></script>
+<head>
+	<title> Ayuntamiento de tu casa</title>
+    <script type="text/javascript" src="../../js/script.js"></script>
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
-  </head>
-    
-  <body>
-  	<header><h1>Banner</h1></header>
+    <link rel="stylesheet" type="text/css" href="../../css/styleInicio.css">
+	<meta charset="UTF-8">
+</head>
+	<header>
+		<div>
+			<img src="../../img/logo.jpg" width="200px" height="200px">
+			<img src="../../img/banner.jpg" width="796px" height="200px">
+		</div>
         <nav>
 			<ul class="menu">
-				<li><a href="../../index.html">Inicio</a></li>
+				<li><a href="menu_principal.php">Inicio</a></li>
 	            <li><a href="debate.php">Debates</a></li>
 	            <li><a href="#">Denuncias</a></li>
 	            <li><a href="#">Intercambios</a></li>
@@ -35,5 +38,9 @@
 <input name="comment_parent" id="comment_parent" value="0" type="hidden">
 </p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="97a7dc6083" type="hidden"></p><p class="comment-subscription-form"><input name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" type="checkbox"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" type="checkbox"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p><p style="display: none;"></p>			<input id="ak_js" name="ak_js" value="1516118096280" type="hidden"></form>
 			</div>
+
+	<footer>
+		<p>Ayuntamiento de Cornella</p>
+	</footer>
   </body>
 </html>

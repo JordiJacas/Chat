@@ -7,23 +7,23 @@
 ?>
 <head>
 	<title> Ayuntamiento de tu casa</title>
-    <script type="text/javascript" src="../js/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/styleInicio.css">
+    <script type="text/javascript" src="../../js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/styleInicio.css">
 	<meta charset="UTF-8">
 </head>
 	<header>
 		<div>
-			<img src="../img/logo.jpg" width="200px" height="200px">
-			<img src="../img/banner.jpg" width="796px" height="200px">
+			<img src="../../img/logo.jpg" width="200px" height="200px">
+			<img src="../../img/banner.jpg" width="796px" height="200px">
 		</div>
 		<nav>
 			<ul class="menu">
-				<li><a href="../index.html">Inicio</a></li>
-	            <li><a href="pag/debate.php">Debates</a></li>
+				<li><a href="menu_principal.php">Inicio</a></li>
+	            <li><a href="debate.php">Debates</a></li>
 	            <li><a href="#">Denuncias</a></li>
 	            <li><a href="#">Intercambios</a></li>
-	            <li><a href="pag/chat.php">Chat</a></li>
+	            <li><a href="chat.php">Chat</a></li>
 	            <?php
 	            	echo "	<p id='ini_ses'>".$user."</p>";		
 	            ?>

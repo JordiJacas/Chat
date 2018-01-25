@@ -6,16 +6,21 @@
 ?>
 <html>
   <head>
+  <head>
   <title> Ayuntamiento de tu casa</title>
-    <script type="text/javascript" src="script.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-    
-  <body>
-  	<header><h1>Banner</h1></header>
+    <script type="text/javascript" src="../../js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/styleInicio.css">
+  <meta charset="UTF-8">
+</head>
+  <header>
+    <div>
+      <img src="../../img/logo.jpg" width="200px" height="200px">
+      <img src="../../img/banner.jpg" width="796px" height="200px">
+    </div>
       <nav>
       <ul class="menu">
-        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="menu_principal.php">Inicio</a></li>
         <li><a href="debate.php">Debates</a></li>
         <li><a href="#">Denuncias</a></li>
         <li><a href="#">Intercambios</a></li>
@@ -26,5 +31,8 @@
         <a href='logout.php' id='reg'>Logout</a>
       </ul>
     </nav>
+    <footer>
+      <p>Ayuntamiento de Cornella</p>
+    </footer>
   </body>
 </html>
