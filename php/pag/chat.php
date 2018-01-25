@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/styleInicio.css">
   <meta charset="UTF-8">
 </head>
+<body>
   <header>
     <div>
       <img src="../../img/logo.jpg" width="200px" height="200px">
@@ -31,6 +32,7 @@
         <a href='logout.php' id='reg'>Logout</a>
       </ul>
     </nav>
+  <header>
     <footer>
       <p>Ayuntamiento de Cornella</p>
     </footer>

@@ -8,8 +8,31 @@
 	<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../js/scriptChat.js"></script>
 	<script type="text/javascript" src="../js/bottstrap/bootstrap.js"></script>
+	<script type="text/javascript" src="../../js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/styleInicio.css">
 </head>
 <body>
+<header>
+    <div>
+      <img src="../img/logo.jpg" width="200px" height="200px">
+      <img src="../img/banner.jpg" width="796px" height="200px">
+    </div>
+      <nav>
+      <ul class="menu">
+        <li><a href="menu_principal.php">Inicio</a></li>
+        <li><a href="debate.php">Debates</a></li>
+        <li><a href="#">Denuncias</a></li>
+        <li><a href="#">Intercambios</a></li>
+        <li><a href="chat.php">Chat</a></li>
+        <?php
+          echo "  <p id='ini_ses'>".$user."</p>";   
+        ?>
+        <a href='logout.php' id='reg'>Logout</a>
+      </ul>
+    </nav>
+ </header>
+<section>
 <div class="chat_window">
 	<div class="top_menu">
 		<div class="buttons">
@@ -38,6 +61,11 @@
 			</div>
 		</li>
 	</div>
+</section>
+
+<footer>
+    <p>Ayuntamiento de Cornella</p>
+</footer>
 
 </body>
 </html>
