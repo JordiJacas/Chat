@@ -27,19 +27,24 @@
 	            <?php
 	            	echo "	<p id='ini_ses'>".$user."</p>";		
 	            ?>
-	            <a href='logout.php' id='reg'>Logout</a>
+	            <a href='../logout.php' id='reg'>Logout</a>
 			</ul>
 		</nav>
 	</header>
 	<section class="main">
 		<aside id="aside-left">
-			<a href="#"><p>Contenido 1</p></a>
+			<h3>Noticias</h3>
+			<p><a href="http://www.cornella.cat/es/noticia.asp?pag=&id=7787&por=1&tf=ap">Cornellà reclama també a la Generalitat els pagaments pendents de les escoles bressol des de 2015 fins ara</a></p>
 		</aside>
 		<section class="articles">
 
 		</section>
 		<aside id="aside-right">
-			<a href="#"><p>Contenido 2</p></a>
+			<h3>Redes Sociales</h3>
+			<p><a href="https://twitter.com/qferacornella?lang=ca">Twitter</a></p>
+			<p><a href="https://www.facebook.com/Informer.Cornella.De.Llobregat/">Facebook</a></p>
+			<p><a href="https://www.youtube.com/channel/UCN-E583ha902JhhQwQ3Xq_g">YouTube</a></p>
+			<p><a href="https://www.instagram.com/inscornella/">Instagram</a></p>
 		</aside>
 	</section>
 		<footer>

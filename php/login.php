@@ -9,7 +9,7 @@ $_SESSION['pwd'] = $pwd;
 
 if($user == $pwd){
 
-	header('Location: http://localhost/Chat/php/menu_principal.php');
+	header('Location: http://localhost/Chat/php/pag/menu_principal.php');
 
 }else{
 

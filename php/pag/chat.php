@@ -29,7 +29,7 @@
         <?php
           echo "  <p id='ini_ses'>".$user."</p>";   
         ?>
-        <a href='logout.php' id='reg'>Logout</a>
+        <a href='../logout.php' id='reg'>Logout</a>
       </ul>
     </nav>
   <header>
