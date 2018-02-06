@@ -11,10 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'ChatController@getWelcome');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'ChatController@getWelcome');
+
+Route::get('denuncia', 'ChatController@getDenuncia');
+
+Route::get('debate', 'ChatController@getDebate');
+
+Route::get('login', 'ChatController@getLogin');
+

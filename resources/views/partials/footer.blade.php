@@ -11,10 +11,10 @@
 				<div class="fh5co-footer-widget">
 					<h3>Quick Links</h3>
 					<ul class="fh5co-footer-link">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="#">Debates</a></li>
-						<li><a href="contact.html">Denuncias</a></li>
-						<li><a href="#">Intercambios</a></li>
+						<li><a href="/">Home</a></li>
+						<li><a href="debate">Debates</a></li>
+						<li><a href="denuncia">Denuncias</a></li>
+						<li><a href="intercanbio">Intercambios</a></li>
 					</ul>
 				</div>
 			</div>
