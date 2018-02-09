@@ -33,6 +33,8 @@ class CreateTablesTable extends Migration
             $table->string('img');
             $table->integer('id_usuario')->unsigned();
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
+
         });
 
         Schema::create('intercanbio', function (Blueprint $table) {

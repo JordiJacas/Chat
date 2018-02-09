@@ -26,3 +26,7 @@ Route::get('denuncia', 'ChatController@getDenuncia')->name('denuncia');
 
 Route::get('debate', 'ChatController@getDebate')->name('debate');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

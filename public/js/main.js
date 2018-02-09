@@ -183,11 +183,3 @@ function enviar_respuesta(){
 	$('#respuesta').remove();
 	
 }
-
-//Bootstrap input file
-
-$("#file-3").fileinput({
-			showCaption: false,
-			browseClass: "btn btn-primary btn-lg",
-			fileType: "any"
-			});
