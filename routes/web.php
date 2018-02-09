@@ -15,15 +15,13 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'ChatController@getWelcome');
+Route::get('/','ChatController@getWelcome')->name('home');
 
 Auth::routes();
 
-Route::get('/', 'ChatController@getWelcome');
+Route::get('/home', 'HomeController@index');
 
-Route::get('denuncia', 'ChatController@getDenuncia');
+Route::get('denuncia', 'ChatController@getDenuncia')->name('denuncia');
 
-Route::get('debate', 'ChatController@getDebate');
-
-Route::get('login', 'ChatController@getLogin');
+Route::get('debate', 'ChatController@getDebate')->name('debate');
 

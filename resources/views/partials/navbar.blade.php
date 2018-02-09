@@ -10,9 +10,9 @@
 								<a href="#">Servicios</a>
 								<div class="dropdown-menu-wrap">
 									<ul>
-										<li><a href="debate">Debates</a></li>
-										<li><a href="denuncia">Denuncias</a></li>
-										<li><a href="intercambio">Intercambios</a></li>
+										<li><a href="{{url('/debate')}}">Debates</a></li>
+										<li><a href="{{url('/denuncia')}}">Denuncias</a></li>
+										<li><a href="{{url('/intercambio')}}">Intercambios</a></li>
 									</ul>
 								</div>
 							</div>
@@ -22,8 +22,8 @@
 								<a href="#">Perfil</a>
 								<div class="dropdown-menu-wrap">
 									<ul>
-										<li><a href="login">Iniciar Sesion</a></li>
-										<li><a href="left-sidebar.html">Registrarse</a></li>
+										<li><a href="{{url('/login')}}">Iniciar Sesion</a></li>
+										<li><a href="{{url('/register')}}">Registrarse</a></li>
 										
 									</ul>
 								</div>
