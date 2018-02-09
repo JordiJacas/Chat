@@ -23,6 +23,8 @@ Route::get('/', 'ChatController@getWelcome');
 
 Route::get('denuncia', 'ChatController@getDenuncia');
 
+Route::post('denuncia', 'DenunciasController@store');
+
 Route::get('debate', 'ChatController@getDebate');
 
 Route::get('login', 'ChatController@getLogin');

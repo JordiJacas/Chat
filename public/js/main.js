@@ -145,7 +145,7 @@
 
 
 
-//JQuery
+//JQuery Para los Debates.
 var count = 0;
 function enviar_debate(){
 	var user_name = document.getElementById('user_name').value;
@@ -183,3 +183,11 @@ function enviar_respuesta(){
 	$('#respuesta').remove();
 	
 }
+
+//Bootstrap input file
+
+$("#file-3").fileinput({
+			showCaption: false,
+			browseClass: "btn btn-primary btn-lg",
+			fileType: "any"
+			});
