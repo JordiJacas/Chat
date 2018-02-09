@@ -20,9 +20,4 @@ class ChatController extends Controller
 	{
    		return view('debate');
 	}
-
-	public function getLogin()
-	{
-   		return view('auth.login2');
-	}
 }

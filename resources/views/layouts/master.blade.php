@@ -36,7 +36,7 @@
     <div id="fh5co-page">
       @include('partials.navbar')
 
-        @yield('content')
+          @yield('content')
 
       @include('partials.footer')
     </div>

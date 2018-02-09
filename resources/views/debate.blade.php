@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+{{ Breadcrumbs::render('debate') }}
 <div id="fh5co-intro" class="fh5co-section">
 	<div class="container">
 		<div class="row row-bottom-padded-sm">

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-
+{{ Breadcrumbs::render('home') }}
 <div class="fh5co-slider">
 	<div class="container">
 		<div class="owl-carousel owl-carousel-main">
