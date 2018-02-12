@@ -30,7 +30,7 @@
 						<label for="images">Imagen</label>
 						<div class="form-inline">
 							<div class="form-group">
-								<input type="file" name="file[]" id="js-upload-files" multiple="true">
+								<input type="file" name="img" id="file"></input>
 							</div>
 						</div>
 					</div>
@@ -39,9 +39,6 @@
 						<button class="btn btn-default" type="reset">Reset</button>
 					</div>	
 				</form>
-				<?php
-
-				?>
 			</div>
 			<div class="col-md-4 col-md-push-1 col-sm-12 col-sm-push-0" id="fh5co-sidebar">
 				<div class="fh5co-contact-info">
@@ -53,18 +50,24 @@
 					<p>Email: <a href="#">informacio@aj-cornella.cat</a></p>
 					<p>Website: <a href="http://www.cornella.cat/ca/index.asp?idioma=ca">www.cornella.cat</a></p>
 				</div>
-				
 			</div>
+			<div class="row row-bottom-padded-sm">
+					<div class="col-md-8 col-md-offset-2 text-center ts-intro">
+						<h1>Denuncia Realizadas</h1>
+					</div>
+				</div>
+				<?php
+					$denuncias = DB::table('denuncia')->get();
+					foreach ($denuncias as $denuncia) {
+						# code...
+						echo "<div class='col-md-4 text-center' style='display: inline-block;'>
+							<p>".$denuncia->descripcion."</p>
+							<br><img src='".$denuncia->img."' width='300px' height='200px'>
+							<hr>
+							</div>";
+					}
+				?>
 		</div>
-		<script type="text/javascript">
-			$("#file-3").fileinput({
-			showCaption: false,
-			browseClass: "btn btn-primary btn-lg",
-			fileType: "any"
-			});
-		</script>
-		&nbsp;
-
 	</div>
 </div>
 @stop

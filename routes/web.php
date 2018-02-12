@@ -30,3 +30,5 @@ Route::get('debate', 'ChatController@getDebate')->name('debate');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('storage/create', 'DenunciasController@save');
