@@ -25,3 +25,5 @@ Route::get('denuncia', 'ChatController@getDenuncia')->name('denuncia');
 
 Route::get('debate', 'ChatController@getDebate')->name('debate');
 
+Route::get('iSession', 'ChatController@getSession')->name('iSession');
+
