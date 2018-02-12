@@ -20,4 +20,9 @@ class ChatController extends Controller
 	{
    		return view('debate');
 	}
+
+	public function getSession()
+	{
+   		return view('iSession');
+	}
 }
