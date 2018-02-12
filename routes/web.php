@@ -17,9 +17,7 @@
 
 Route::get('/','ChatController@getWelcome')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
+Route::post('denuncia', 'DenunciasController@store');
 
 Route::get('denuncia', 'ChatController@getDenuncia')->name('denuncia');
 
@@ -27,3 +25,5 @@ Route::get('debate', 'ChatController@getDebate')->name('debate');
 
 Route::get('iSession', 'ChatController@getSession')->name('iSession');
 
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');

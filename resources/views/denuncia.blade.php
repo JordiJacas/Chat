@@ -12,23 +12,36 @@
 		</div>
 		<div class="row row-bottom-padded-sm">
 			<div class="col-md-6" id="fh5co-content">
-				<form action="#" method="post">
+				<form action="{{url('denuncia')}}" method="post" enctype="multipart/form-data">
+				{{csrf_field()}}
 					<div class="form-group">
 						<label for="name">Nombre</label>
-						<input type="text" class="form-control" id="name">
+						<input name="nombre" type="text" class="form-control" id="name">
 					</div>
 					<div class="form-group">
 						<label for="email">Email</label>
-						<input type="email" class="form-control" id="name">
+						<input name="email" type="email" class="form-control" id="email">
 					</div>
 					<div class="form-group">
 						<label for="message">Mensaje</label>
 						<textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
 					</div>
 					<div class="form-group">
-						<input type="submit" class="btn btn-primary" value="Enviar">
+						<label for="images">Imagen</label>
+						<div class="form-inline">
+							<div class="form-group">
+								<input type="file" name="file[]" id="js-upload-files" multiple="true">
+							</div>
+						</div>
 					</div>
+					<div class="form-group">
+						<button type="submit" name="submit" class="btn btn-primary">Submit</button>
+						<button class="btn btn-default" type="reset">Reset</button>
+					</div>	
 				</form>
+				<?php
+
+				?>
 			</div>
 			<div class="col-md-4 col-md-push-1 col-sm-12 col-sm-push-0" id="fh5co-sidebar">
 				<div class="fh5co-contact-info">
@@ -43,7 +56,14 @@
 				
 			</div>
 		</div>
-		
+		<script type="text/javascript">
+			$("#file-3").fileinput({
+			showCaption: false,
+			browseClass: "btn btn-primary btn-lg",
+			fileType: "any"
+			});
+		</script>
+		&nbsp;
 
 	</div>
 </div>
