@@ -25,4 +25,9 @@ class ChatController extends Controller
 	{
    		return view('iSession');
 	}
+
+	public function getNoticia()
+	{
+   		return view('noticias');
+	}
 }

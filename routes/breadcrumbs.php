@@ -24,10 +24,16 @@ Breadcrumbs::register('login', function ($breadcrumbs) {
 });
 
 
-// Home -> Register
+// Home -> CrearNoticia
 Breadcrumbs::register('register', function ($breadcrumbs) {
 	$breadcrumbs->parent('home');
-    $breadcrumbs->push('Registro', route('register'));
+    $breadcrumbs->push('Registro', route('register_shutdown_function(function)'));
 });
 
+
+// Home -> CrearNoticia
+Breadcrumbs::register('noticia', function ($breadcrumbs) {
+	$breadcrumbs->parent('home');
+    $breadcrumbs->push('Crear Noticia', route('noticia'));
+});
 

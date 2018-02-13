@@ -33,8 +33,6 @@ class CreateTablesTable extends Migration
             $table->string('img');
             $table->integer('id_usuario')->unsigned();
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
-
         });
 
         Schema::create('intercanbio', function (Blueprint $table) {
@@ -52,6 +50,7 @@ class CreateTablesTable extends Migration
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
             $table->integer('id_chat')->unsigned();
             $table->foreign('id_chat')->references('id')->on('chat')->onDelete('cascade');
+            $table->timestamps();
         });
 
         Schema::create('respuesta', function (Blueprint $table) {
@@ -61,6 +60,20 @@ class CreateTablesTable extends Migration
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
             $table->integer('id_debate')->unsigned();
             $table->foreign('id_debate')->references('id')->on('debate')->onDelete('cascade');
+        });
+
+        Schema::create('noticia', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('titulo',30)->required();
+            $table->string('descripcion')->required();
+            $table->string('img')->default(null);
+            $table->string('categoria')->required();
+            $table->timestamps();
+        });
+
+        Schema::create('categoria', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('categoria');
         });
     }
 
