@@ -30,3 +30,5 @@ Route::get('iSession', 'ChatController@getSession')->name('iSession');
 Route::get('noticia', 'ChatController@getNoticia')->name('noticia');
 
 Route::post('storage/create', 'DenunciasController@save');
+
+Route::get('chat', 'ChatController@getChat')->name('chat');

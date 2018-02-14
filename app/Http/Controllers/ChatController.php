@@ -30,4 +30,7 @@ class ChatController extends Controller
 	{
    		return view('noticias');
 	}
+	public function getChat(){
+		return view('chat');
+	}
 }
