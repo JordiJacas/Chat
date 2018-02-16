@@ -1,4 +1,4 @@
-<Aheader id="fh5co-header" role="banner">
+<header id="fh5co-header" role="banner">
 	<div class="container">
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
 		@guest
