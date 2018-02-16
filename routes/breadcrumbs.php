@@ -37,3 +37,8 @@ Breadcrumbs::register('noticia', function ($breadcrumbs) {
     $breadcrumbs->push('Crear Noticia', route('noticia'));
 });
 
+// Home -> Chat
+Breadcrumbs::register('chat', function ($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Chat', route('chat'));
+});
