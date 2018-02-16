@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Categoria;
+use App\Noticia;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,15 +15,53 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         self::seedCategorias();
-  		$this->command->info('Tabla catálogo inicializada con datos!');
+  		$this->command->info('Tabla categoria inicializada con datos!');
+
+        self::seedNoticias();
+        $this->command->info('Tabla noticia inicializada con datos!');
     }
 
-    public function seedCatalog()
+    public function seedCategorias()
     {
-    	DB::table('movies')->delete();
-    	foreach( $this->arrayCategorias as $categoria ) {
+    	foreach( $this->arrayCategorias as $nomCategoria ) {
    			$p = new Categoria;
-    		$p->categoria = $categoria;
-    		$p->save();
+            $p->nom = $nomCategoria;
+            $p->save();
+        }
     }
+
+    public function seedNoticias()
+    {
+        foreach( $this->arrayNoticias as $noticia ) {
+            $p = new Noticia;
+            $p->titulo = $noticia['titulo'];
+            $p->descripcion = $noticia['descripcion'];
+            $p->img = $noticia['img'];
+            $p->save();
+        }
+    }
+
+    private $arrayCategorias = array(
+        'Sin Categoria',
+        'Deporte',
+        'Literatura',
+        'Tecnologia',
+        'Cocina',
+        'Ciencia',
+        'Filososfia',
+        'Geologia',
+        'Turismo',
+        'Automovilistica');
+
+    private $arrayNoticias = array(
+        array(
+            'titulo'=>'Noticia1',
+            'descripcion' => 'descripcion noticia 1'
+            ),
+        array(
+            'titulo'=>'Noticia2',
+            'descripcion' => 'descripcion noticia 2'
+            ));
+
+
 }

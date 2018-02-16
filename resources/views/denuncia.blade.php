@@ -24,7 +24,7 @@
 					</div>
 					<div class="form-group">
 						<label for="message">Mensaje</label>
-						<textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
+						<textarea style="resize: none" name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
 					</div>
 					<div class="form-group">
 						<label for="images">Imagen</label>
@@ -33,6 +33,7 @@
 								<input type="file" name="img" id="file"></input>
 							</div>
 						</div>
+						<input type="submit" class="btn btn-primary" value="Enviar">
 					</div>
 					<div class="form-group">
 						<button type="submit" name="submit" class="btn btn-primary">Submit</button>
@@ -50,6 +51,7 @@
 					<p>Email: <a href="#">informacio@aj-cornella.cat</a></p>
 					<p>Website: <a href="http://www.cornella.cat/ca/index.asp?idioma=ca">www.cornella.cat</a></p>
 				</div>
+				
 			</div>
 			<div class="row row-bottom-padded-sm">
 					<div class="col-md-8 col-md-offset-2 text-center ts-intro">
@@ -67,6 +69,7 @@
 							</div>";
 					}
 				?>
+		</div>
 		</div>
 	</div>
 </div>
