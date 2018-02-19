@@ -27,13 +27,11 @@
 						<textarea style="resize: none" name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
 					</div>
 					<div class="form-group">
-						<label for="images">Imagen</label>
 						<div class="form-inline">
 							<div class="form-group">
 								<input type="file" name="img" id="file"></input>
 							</div>
 						</div>
-						<input type="submit" class="btn btn-primary" value="Enviar">
 					</div>
 					<div class="form-group">
 						<button type="submit" name="submit" class="btn btn-primary">Submit</button>

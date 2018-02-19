@@ -79,7 +79,7 @@ class CreateTablesTable extends Migration
             $table->string('descripcion')->required();
             $table->string('img')->nullable();
             $table->boolean('prioritario')->default(false);
-            $table->integer('n_categoria')->default('Sin Categoria')->unsigned();
+            $table->integer('n_categoria')->default(1)->unsigned();
             $table->foreign('n_categoria')->references('id')->on('categorias')->onDelete('cascade');
             $table->timestamps();
         });

@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Noticia;
 
 class ChatController extends Controller
 {
     public function getWelcome()
-	{
-   		return view('welcome');
+	{	
+		$noticiasF = Noticia::all()->where('prioritario', false);
+		$noticiasT = Noticia::all()->where('prioritario', True);
+   		return view('welcome',["arrayNoticiasF"=>$noticiasF],["arrayNoticiasT"=>$noticiasT]);
 	}
 
 	public function getDenuncia()
