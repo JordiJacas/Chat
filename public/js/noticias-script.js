@@ -7,7 +7,7 @@ $(document).ready(crearFormNoticia);
 ** Entrada: string id, string text, string type, string name
 ** Salida: string
 */
-function crearCampos(id,text0,type,name){
+function crearCampos(id,texto,type,name){
 
 	var label = '<label for="'+id+'">'+texto+'</label>';
 	var div = '<div class="form-group"></div>';
@@ -22,7 +22,7 @@ function crearCampos(id,text0,type,name){
 		var campo = $(div).append(label,textoarea);
 	}else if(type == 'checkbox'){
 
-		var input = '<input type="'+type+'" name="'+name+'" value=True>' + texto
+		var input = '<input type="'+type+'" name="'+name+'" value=1>' + texto
 		var campo = $(div).append(input);
 	}else if(type == 'file'){
 
@@ -36,11 +36,7 @@ function crearCampos(id,text0,type,name){
 		
 		var opcions;
 		var input = "<select></select>";
-		
-		for(var key as text){
-			opcions = "<option"+text[key].id+">"+ text[key].nom+"</option>";
-			$(input).append(opcions);
-		}
+	
 		var campo = $(div).append(label,input);
 	}
 
@@ -60,13 +56,7 @@ function crearFormNoticia(){
 	var cSubmit = crearCampos(' ', 'Enviar', 'submit', ' ');
 	var cCheckbox = crearCampos('check', ' Prioritario', 'checkbox', 'check');
 	var cImg = crearCampos('file', '', 'file', 'img');
-	
-	
-	var array = lee_json();
-	var cSelect = crearCampos('', array, 'select', '');
-	
-	
-	
+		
 	$('#form').append(cTitulo,cTextarea,cCheckbox,cImg,cSubmit);
 }
 

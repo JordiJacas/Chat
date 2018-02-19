@@ -9,9 +9,9 @@ class ChatController extends Controller
 {
     public function getWelcome()
 	{	
-		$noticiasF = Noticia::all()->where('prioritario', false);
-		$noticiasT = Noticia::all()->where('prioritario', True);
-   		return view('welcome',["arrayNoticiasF"=>$noticiasF],["arrayNoticiasT"=>$noticiasT]);
+		$noticiasF = Noticia::all()->where('prioritario', 0);
+		$noticiasT = Noticia::all()->where('prioritario', 1);
+   		return view('welcome',["arrayNoticiasF"=>$noticiasF, "arrayNoticiasT"=>$noticiasT]);
 	}
 
 	public function getDenuncia()

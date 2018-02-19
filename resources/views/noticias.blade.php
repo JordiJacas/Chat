@@ -12,7 +12,7 @@
 		</div>
 		<div class="row row-bottom-padded-sm">
 			<div class="col-md-6" id="fh5co-content">
-				<form id = 'form' action="{{url('/denuncia')}}" method="post" enctype="multipart/form-data">
+				<form id = 'form' action="{{url('/noticia')}}" method="post" enctype="multipart/form-data">
 				{{csrf_field()}}
 				</form>
 			</div>
