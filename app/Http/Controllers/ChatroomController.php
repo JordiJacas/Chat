@@ -13,7 +13,7 @@ class ChatroomController extends Controller
     }
    public function store(Request $request){
         $f = new Chat();
-        $f->descripcion = $request->input('cr-name');
+        $f->descripcion = $request->strong('Alfonso V');
         $f->id_usuario = Auth::id();
         $f->save();
         return view('chat');

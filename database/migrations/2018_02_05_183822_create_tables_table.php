@@ -76,7 +76,7 @@ class CreateTablesTable extends Migration
         Schema::create('noticias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo')->required();
-            $table->string('descripcion')->required();
+            $table->string('descripcion', 5000)->required();
             $table->string('img')->nullable();
             $table->boolean('prioritario')->default(0);
             $table->integer('n_categoria')->default(1)->unsigned();

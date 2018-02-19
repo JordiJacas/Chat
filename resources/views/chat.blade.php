@@ -3,6 +3,8 @@
 @section('content')
 {{ Breadcrumbs::render('chat') }}
 <script src="https://use.fontawesome.com/45e03a14ce.js"></script>
+<form action="#" method="post" enctype="multipart/form-data">
+         {{csrf_field()}}
 <div class="main_section">
    <div class="container">
       <div class="chat_container">
@@ -20,7 +22,7 @@
                      </span>
                      <div class="chat-body clearfix">
                         <div class="header_sec">
-                           <strong class="primary-font">Alfonso V</strong> <strong class="pull-right">
+                           <strong name="Alfonso V" class="primary-font">Alfonso V</strong> <strong class="pull-right">
                            09:30</strong>
                         </div>
                         <div class="contact_sec">
@@ -28,7 +30,7 @@
                         </div>
                      </div>
                   </li>
-                  <li onclick="accederChatroom()" class="left clearfix">
+                  <!--<li onclick="accederChatroom()" class="left clearfix">
                      <span class="chat-img pull-left">
                      <img src="{{ asset('img/avatar.png') }}" alt="User Avatar" class="img-circle">
                      </span>
@@ -69,7 +71,7 @@
                            <strong class="primary-font">Ayuntamiento Cornella</strong>
                         </div>
                      </div>
-                  </li>  
+                  </li> --> 
                </ul>
             </div></div>
          </div>
@@ -106,15 +108,17 @@
          </ul>
          </div><!--chat_area-->
           <div class="message_write">
-         <textarea name="message" id="mensaje" class="form-control" placeholder="Escribe un mensaje" disabled="true"></textarea>
-         <div class="clearfix"></div>
-         <div class="chat_bottom">
- <a id="send" type="submit" onclick="enviarMensaje()" disabled="true" class="pull-right btn btn-success">
- Send</a></div>
+            <textarea name="mensaje" id="mensaje" class="form-control" placeholder="Escribe un mensaje"></textarea>
+            <div class="clearfix"></div>
+            <div class="chat_bottom">
+            <button id="send" class="pull-right btn btn-success">Send</button>
+            <!--<a  type="submit" name="submit" id="send" onclick="enviarMensaje()" disabled="true" class="pull-right btn btn-success">Send</a>-->
+         </div>
          </div>
          </div>
          </div> <!--message_section-->
       </div>
    </div>
 </div>
+<form>
 @stop
