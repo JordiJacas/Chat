@@ -79,7 +79,7 @@
          <div class="col-sm-9 message_section">
          <div class="row">
          <div class="new_message_head">
-         <div class="pull-left">New ChatRoom</div><div class="pull-right"><div class="dropdown">
+         <div class="pull-left">Chat</div><div class="pull-right"><div class="dropdown">
   <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ajustes
     <span class="caret"></span>
   </button>
@@ -106,10 +106,10 @@
          </ul>
          </div><!--chat_area-->
           <div class="message_write">
-         <textarea id="mensaje" class="form-control" placeholder="Escribe un mensaje" disabled="true"></textarea>
+         <textarea name="message" id="mensaje" class="form-control" placeholder="Escribe un mensaje" disabled="true"></textarea>
          <div class="clearfix"></div>
          <div class="chat_bottom">
- <a id="send" onclick="enviarMensaje()" disabled="true" class="pull-right btn btn-success">
+ <a id="send" type="submit" onclick="enviarMensaje()" disabled="true" class="pull-right btn btn-success">
  Send</a></div>
          </div>
          </div>

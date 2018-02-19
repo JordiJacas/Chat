@@ -21,17 +21,32 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+//Denuncias
+
+Route::post('denuncia', 'DenunciasController@store');
+
 Route::get('denuncia', 'ChatController@getDenuncia')->name('denuncia');
+
+Route::post('storage/create', 'DenunciasController@save');
+
+//Debates
 
 Route::get('debate', 'ChatController@getDebate')->name('debate');
 
+//Sesion
+
 Route::get('iSession', 'ChatController@getSession')->name('iSession');
+
+//Noticias
 
 Route::get('noticia', 'ChatController@getNoticia')->name('noticia');
 
-Route::post('storage/denuncias', 'DenunciasController@save');
+Route::post('noticia', 'NoticiasController@store');
+
+//Chat
 
 Route::get('chat', 'ChatController@getChat')->name('chat');
 
-Route::post('noticia', 'NoticiasController@store');
+Route::post('chat', 'ChatController@store');
 
+Route::post('storage/create', 'ChatroomController@save');
