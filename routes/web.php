@@ -19,7 +19,7 @@ Route::get('/','ChatController@getWelcome')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'ChatController@getWelcome');
 
 Route::get('denuncia', 'ChatController@getDenuncia')->name('denuncia');
 
@@ -27,8 +27,12 @@ Route::get('debate', 'ChatController@getDebate')->name('debate');
 
 Route::get('iSession', 'ChatController@getSession')->name('iSession');
 
-Route::get('noticia', 'ChatController@getNoticia')->name('noticia');
+Route::get('noticia', 'NoticiasController@Index')->name('noticia');
 
 Route::post('storage/create', 'DenunciasController@save');
 
 Route::get('chat', 'ChatController@getChat')->name('chat');
+
+Route::post('noticia', 'NoticiasController@store');
+
+Route::post('denuncia', 'DenunciasController@store');

@@ -24,7 +24,7 @@ Breadcrumbs::register('login', function ($breadcrumbs) {
 });
 
 
-// Home -> CrearNoticia
+// Home -> Register
 Breadcrumbs::register('register', function ($breadcrumbs) {
 	$breadcrumbs->parent('home');
     $breadcrumbs->push('Registro', route('register_shutdown_function(function)'));

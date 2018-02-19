@@ -22,42 +22,27 @@
 			</div>
 		</div>
 		<div class="row row-bottom-padded-sm">
-			<div class="col-md-4">
-				<div class="fh5co-service text-center">
-					<span><img src="{{ asset('img/escolabressol.jpg') }}" width="300px"></img></span>
-					<h3>Cornellà reclama també a la Generalitat els pagaments pendents de les escoles bressol des de 2015 fins ara</h3>
-					<p>El consistori fixa en 2.528.834 euros la quantitat a pagar per l'administració autonòmica, en compliment dels convenis dels cursos 2015-16, 2016-17 i, de l'actual, 2017-18</p>
+			@foreach($arrayNoticiasT as $keyT => $noticiaT)
+				<div class="col-md-6">
+					<p><img src="{{$noticiaT->img}}" width="400px" class="img-responsive img-bordered"></p>
 				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="fh5co-service text-center">
-					<span><img src="{{ asset('img/fontsantarender.jpg') }}" width="300px"></img></span>
-					<h3>Cornellà invertirà 5 milions d'euros en 2018</h3>
-					<p>També s'inclouen en aquestes inversions vuit projectes sorgits del procés de ‘pressupostos participatius'</p>
+				<div class="col-md-6 padded-top">
+					<h3>{{$noticiaT->titulo}}</h3>
+					<p>{{$noticiaT->descripcion}}</p>
 				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="fh5co-service text-center">
-					<span><img src="{{ asset('img/complexaquatic.jpg') }}" width="300px"></img></span>
-					<h3>Vine a bufar les espelmes del 5è aniversari del Complex Esportiu Can Mercader!</h3>
-					<p>Arriba a aquesta data amb 2.349 abonats, amb una mitjana d'usos diaris que superen les 800 persones</p>
-				</div>
-			</div>
+			@endforeach
 		</div>
+		
 		<div class="row row-bottom-padded-sm">
-			<div class="col-md-6">
-				<p><img src="{{ asset('img/Marta_Mata.JPG') }}" width="400px" class="img-responsive img-bordered"></p>
+		@foreach($arrayNoticiasF as $keyF => $noticiaF)
+			<div class="col-md-4">
+				<div class="fh5co-service text-center">
+					<span><img src="{{$noticiaF->img}}" width="300px"></img></span>
+					<h3>{{$noticiaF->titulo}}</h3>
+					<p>{{$noticiaF->descripcion}}</p>
+				</div>
 			</div>
-			<div class="col-md-6 padded-top">
-				<h3>Conferència: Jaume I el Conqueridor</h3>
-				<p>Conferència sobre aquest sobirà que va ampliar de manera extraordinària els territoris de la Corona d'Aragó durant els 58 anys que regnà en el segle XIII.</p>
-				<ul class="ul_style_1">
-					<li>Dia: 01/02/18</li>
-					<li>Hora: 19h</li>
-					<li>Lloc: sala Titan</li>
-					<li>A càrrec de David González Dins del cicle "Els dijous amb història" organitzat per Òmnium Cultural</li>
-				</ul>
-			</div>
+		@endforeach
 		</div>
 
 		<div class="row row-bottom-padded-sm">
