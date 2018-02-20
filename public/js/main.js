@@ -145,7 +145,7 @@
 
 
 
-//JQuery
+//JQuery debate
 var count = 0;
 function enviar_debate(){
 	var user_name = document.getElementById('user_name').value;

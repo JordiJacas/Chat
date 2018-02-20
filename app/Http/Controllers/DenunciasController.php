@@ -14,11 +14,11 @@ class DenunciasController extends Controller
 
     public function store(Request $request){
     	$f = new Denuncia();
+		$f->id_usuario = Auth::id();
     	$f->descripcion = $request->input('message');
-        $ruta = 'App/storage';
+        $ruta = 'App/denuncia';
         $name = $request->file('img')->move($ruta);
         $f->img = $name;
-        $f->id_usuario = Auth::id();
     	$f->save();
         return view('denuncia');
 

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use App\Categoria;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +15,4 @@ use App\Categoria;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});
-
-Route::get('categorias',function(){
-	$categorias = categoria::all();
-	return json_encode($categorias);
-
 });

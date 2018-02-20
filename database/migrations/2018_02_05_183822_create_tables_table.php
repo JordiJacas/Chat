@@ -41,7 +41,7 @@ class CreateTablesTable extends Migration
         Schema::create('intercanbios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descripcion');
-            $table->boolean('solicitado')->default(false);
+            $table->boolean('solicitado')->default(0);
             $table->integer('id_usuario')->unsigned();
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
@@ -67,20 +67,13 @@ class CreateTablesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('categorias', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nom');
-            $table->timestamps();
-        });
-
         Schema::create('noticias', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titulo',30)->required();
+            $table->string('titulo')->required();
             $table->string('descripcion')->required();
             $table->string('img')->nullable();
-            $table->boolean('prioritario')->default(false);
-            $table->integer('n_categoria')->default('Sin Categoria')->unsigned();
-            $table->foreign('n_categoria')->references('id')->on('categorias')->onDelete('cascade');
+            $table->boolean('prioritario')->default(0);
+            $table->string('categoria')->default('Sin categoria');
             $table->timestamps();
         });
 

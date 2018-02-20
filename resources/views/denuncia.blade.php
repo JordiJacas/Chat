@@ -12,22 +12,31 @@
 		</div>
 		<div class="row row-bottom-padded-sm">
 			<div class="col-md-6" id="fh5co-content">
-				<form action="#" method="post">
+				<form action="{{url('denuncia')}}" method="post" enctype="multipart/form-data">
+				{{csrf_field()}}
 					<div class="form-group">
 						<label for="name">Nombre</label>
-						<input type="text" class="form-control" id="name">
+						<input name="nombre" type="text" class="form-control" id="name">
 					</div>
 					<div class="form-group">
 						<label for="email">Email</label>
-						<input type="email" class="form-control" id="name">
+						<input name="email" type="email" class="form-control" id="email">
 					</div>
 					<div class="form-group">
 						<label for="message">Mensaje</label>
 						<textarea style="resize: none" name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
 					</div>
 					<div class="form-group">
-						<input type="submit" class="btn btn-primary" value="Enviar">
+						<div class="form-inline">
+							<div class="form-group">
+								<input type="file" name="img" id="file"></input>
+							</div>
+						</div>
 					</div>
+					<div class="form-group">
+						<button type="submit" name="submit" class="btn btn-primary">Submit</button>
+						<button class="btn btn-default" type="reset">Reset</button>
+					</div>	
 				</form>
 			</div>
 			<div class="col-md-4 col-md-push-1 col-sm-12 col-sm-push-0" id="fh5co-sidebar">
@@ -42,9 +51,24 @@
 				</div>
 				
 			</div>
+			<div class="row row-bottom-padded-sm">
+					<div class="col-md-8 col-md-offset-2 text-center ts-intro">
+						<h1>Denuncia Realizadas</h1>
+					</div>
+				</div>
+				<?php
+					$denuncias = DB::table('denuncias')->get();
+					foreach ($denuncias as $denuncia) {
+						# code...
+						echo "<div class='col-md-4 text-center' style='display: inline-block;'>
+							<p>".$denuncia->descripcion."</p>
+							<br><img src='".$denuncia->img."' width='300px' height='200px'>
+							<hr>
+							</div>";
+					}
+				?>
 		</div>
-		
-
+		</div>
 	</div>
 </div>
 @stop
