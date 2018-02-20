@@ -52,10 +52,10 @@ Route::post('chat', 'MensajeController@store');
 Route::post('storage/create', 'MensajeController@save');
 
 //ChatRoom
-
-/*Route::get('chat', 'ChatController@getChat')->name('chat');
+/*
+Route::get('chat', 'ChatController@getChat')->name('chat');
 
 Route::post('chat', 'ChatRoomController@store');
 
-Route::post('storage/create', 'ChatRoomController@save');*/
-
+Route::post('storage/create', 'ChatRoomController@save');
+*/

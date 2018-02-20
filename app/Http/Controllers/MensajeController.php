@@ -19,7 +19,8 @@ class MensajeController extends Controller
     	$f->descripcion = $request->input('mensaje');
     	$f->id_chat = "1";
     	$f->save();
-        return view('chat');
+        //return view('chat');
+        return json_encode($request->input('mensaje'));
 
     }
 }

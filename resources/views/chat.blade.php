@@ -3,7 +3,7 @@
 @section('content')
 {{ Breadcrumbs::render('chat') }}
 <script src="https://use.fontawesome.com/45e03a14ce.js"></script>
-<form action="#" method="post" enctype="multipart/form-data">
+<form id="formulario" action="{{'chat'}}">
          {{csrf_field()}}
 <div class="main_section">
    <div class="container">
@@ -16,14 +16,14 @@
             </div>
             <div class="member_list">
                <ul class="list-unstyled">
-                  <li onclick="accederChatroom()" class="left clearfix">
+                  <li onclick="printar()" class="left clearfix">
                      <span class="chat-img pull-left">
                      <img src="{{ asset('img/avatar.png') }}" alt="User Avatar" class="img-circle">
                      </span>
                      <div class="chat-body clearfix">
                         <div class="header_sec">
-                           <strong name="Alfonso V" class="primary-font">Alfonso V</strong> <strong class="pull-right">
-                           09:30</strong>
+                           <strong id="room1" name="Alfonso V" class="primary-font">Alfonso V</strong>
+                           <strong class="pull-right">09:30</strong>
                         </div>
                         <div class="contact_sec">
                            <strong class="primary-font">Ayuntamiento Cornella</strong>
@@ -36,7 +36,7 @@
                      </span>
                      <div class="chat-body clearfix">
                         <div class="header_sec">
-                           <strong class="primary-font">Juana I</strong> <strong class="pull-right">
+                           <strong id="room2" name="Juana I" class="primary-font">Juana I</strong> <strong class="pull-right">
                            09:30</strong>
                         </div>
                         <div class="contact_sec">
@@ -50,7 +50,7 @@
                      </span>
                      <div class="chat-body clearfix">
                         <div class="header_sec">
-                           <strong class="primary-font">Amadeo I</strong> <strong class="pull-right">
+                           <strong id="room3" name="Amadeo I" class="primary-font">Amadeo I</strong> <strong class="pull-right">
                            09:30</strong>
                         </div>
                         <div class="contact_sec">
@@ -64,14 +64,14 @@
                      </span>
                      <div class="chat-body clearfix">
                         <div class="header_sec">
-                           <strong class="primary-font">Luis I</strong> <strong class="pull-right">
+                           <strong id="room4" name="Luis I" class="primary-font">Luis I</strong> <strong class="pull-right">
                            09:30</strong>
                         </div>
                         <div class="contact_sec">
                            <strong class="primary-font">Ayuntamiento Cornella</strong>
                         </div>
                      </div>
-                  </li> --> 
+                  </li>--> 
                </ul>
             </div></div>
          </div>
@@ -85,11 +85,11 @@
   <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ajustes
     <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+  <!--<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
       <li><a href="#" onclick="crearChatroom()">Nueva ChatRoom</a></li>
       <li><a href="#">Invitar</a></li>
       <li><a href="#">Salir</a></li>
-  </ul>
+  </ul>-->
 </div></div>
          </div><!--new_message_head-->
          
@@ -101,7 +101,7 @@
                   BotAyuntamiento
 	            </span>
 		        <div class="chat-body1 clearfix">
-	              <br><p>Ahora mismo no estas en ninguna ChatRoom</p>
+	              <br><p>Bienvenidos a la ChatRoom Alfonso V</p>
 		           <div class="chat_time pull-right">09:30</div>
 	            </div>
 	        </li>
@@ -111,8 +111,7 @@
             <textarea name="mensaje" id="mensaje" class="form-control" placeholder="Escribe un mensaje"></textarea>
             <div class="clearfix"></div>
             <div class="chat_bottom">
-            <button id="send" class="pull-right btn btn-success">Send</button>
-            <!--<a  type="submit" name="submit" id="send" onclick="enviarMensaje()" disabled="true" class="pull-right btn btn-success">Send</a>-->
+            <button id="send" name="mysubmit" type="submit" class="pull-right btn btn-success">Send</button>
          </div>
          </div>
          </div>

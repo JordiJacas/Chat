@@ -19,10 +19,6 @@
 						<input name="nombre" type="text" class="form-control" id="name">
 					</div>
 					<div class="form-group">
-						<label for="email">Email</label>
-						<input name="email" type="email" class="form-control" id="email">
-					</div>
-					<div class="form-group">
 						<label for="message">Mensaje</label>
 						<textarea style="resize: none" name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
 					</div>
