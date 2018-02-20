@@ -17,7 +17,6 @@ class ChatController extends Controller
 		$categorias = Noticia::distinct()->get(['categoria']);
 		$noticiasT = Noticia::orderBy('created_at','desc')->where('prioritario', 1)->get();
 		
-		//return $current;
 		return view('welcome',["arrayNoticiasT"=>$noticiasT, "arrayNoticiasF"=>$noticiasF, "categorias"=>$categorias, "cat"=>$cat, "date"=>$dateHoy, "dateS"=>$dateS]);
 	}
 

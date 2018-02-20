@@ -48,29 +48,22 @@
 							<h3>{{$noticiaT->titulo}}</h3>
 							<p>{{$noticiaT->descripcion}}</p>
 						</div>
-					@endif	
-				@elseif($cat == '-----')
-					<div class="col-md-6">
-					<p><img src="{{$noticiaT->img}}" width="400px" class="img-responsive img-bordered"></p>
-				</div>
-				<div class="col-md-6 padded-top">
-					<h3>{{$noticiaT->titulo}}</h3>
-					<p>{{$noticiaT->descripcion}}</p>
-					</div>
+					@endif
 				@endif
-			@endforeach
+			@endforeach	
+				</div>
 		</div>
 		
 		<div class="row row-bottom-padded-sm">
 		@foreach($arrayNoticiasF as $keyF => $noticiaF)
 			@if ($cat == $noticiaF->categoria or $cat == '-----')
-			<div class="col-md-4">
-				<div class="fh5co-service text-center">
-					<span><img src="{{$noticiaF->img}}" width="300px"></img></span>
-					<h3>{{$noticiaF->titulo}}</h3>
-					<p>{{$noticiaF->descripcion}}</p>
+				<div class="col-md-4">
+					<div class="fh5co-service text-center">
+						<span><img src="{{$noticiaF->img}}" width="300px"></img></span>
+						<h3>{{$noticiaF->titulo}}</h3>
+						<p>{{$noticiaF->descripcion}}</p>
+					</div>
 				</div>
-			</div>
 			@endif
 		@endforeach
 		</div>

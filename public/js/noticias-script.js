@@ -55,18 +55,6 @@ function crearFormNoticia(){
 }
 
 
-/*
-** Funcion que se ejecuta al llarmarla, lee formato json
-** Entrada: NULL
-** Salida: 
-*/
-function lee_json(){
-	$.getJSON("/api/categorias", function(datos){
-		alert(datos);
-	});
-}
-
-
 
 
 

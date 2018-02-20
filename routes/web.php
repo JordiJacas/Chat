@@ -14,13 +14,14 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Auth::routes();
+
 
 Route::get('/','ChatController@getWelcome')->name('home');
 
 Route::post('/','CategoriasController@store');
 
-Route::get('home', 'ChatController@getWelcome');
+Auth::routes();
+Route::get('/home', 'ChatController@getWelcome');
 
 Route::get('denuncia', 'ChatController@getDenuncia')->name('denuncia');
 
@@ -37,5 +38,3 @@ Route::get('chat', 'ChatController@getChat')->name('chat');
 Route::post('noticia', 'NoticiasController@store');
 
 Route::post('denuncia', 'DenunciasController@store');
-
-
