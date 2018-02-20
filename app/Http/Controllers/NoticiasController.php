@@ -11,16 +11,23 @@ class NoticiasController extends Controller
     }
     
     public function store(Request $request){
+		
+        $prioritario = $request->input('check');
+
+    	$n = new Noticia();
+		$n->titulo = $request->input('titulo');
+    	$n->descripcion = $request->input('descripcion');
+        $n->categoria = ucfirst($request->input('cat'));
+
+        if($prioritario != ""){
+            $n->prioritario = $request->input('check');
+        }
         
-        $n = new Noticia();
-        $n->titulo = $request->input('titulo');
-        $n->descripcion = $request->input('descripcion');
-        $n->prioritario = $request->input('check');
         $ruta = 'App/noticias';
         $name = $request->file('img')->move($ruta);
-        $f->img = $name;        
-        $n->save();
-        
+        $n->img = $name;
+
+    	$n->save();
         return view('noticias');
     }
 }

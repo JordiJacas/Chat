@@ -32,14 +32,7 @@ function crearCampos(id,texto,type,name){
 
 		var input = '<input name="'+name+'" type="'+type+'" class="form-control" id="'+id+'">';
 		var campo = $(div).append(label,input);	
-	}else if(type == 'select'){
-		
-		var opcions;
-		var input = "<select></select>";
-	
-		var campo = $(div).append(label,input);
 	}
-
 	return campo;
 }
 
@@ -56,20 +49,9 @@ function crearFormNoticia(){
 	var cSubmit = crearCampos(' ', 'Enviar', 'submit', ' ');
 	var cCheckbox = crearCampos('check', ' Prioritario', 'checkbox', 'check');
 	var cImg = crearCampos('file', '', 'file', 'img');
+	var cCategoria = crearCampos('cat', 'Categoria', 'text', 'cat');
 		
-	$('#form').append(cTitulo,cTextarea,cCheckbox,cImg,cSubmit);
-}
-
-
-/*
-** Funcion que se ejecuta al llarmarla, lee formato json
-** Entrada: NULL
-** Salida: 
-*/
-function lee_json(){
-	$.getJSON("/api/categorias", function(datos){
-		alert(datos);
-	});
+	$('#form').append(cTitulo,cTextarea,cCategoria,cCheckbox,cImg,cSubmit);
 }
 
 

@@ -20,28 +20,51 @@
 				<h1>Noticias</h1>
 				<p class="fh5co-lead"></p>
 			</div>
-		</div>
+		</div> 
+		<div class="row row-bottom-padded-md">
+			<div class="col-md-8 col-md-offset-2 text-center ts-intro">
+				<form action="{{url('/')}}" method="post">
+					{{ csrf_field() }}
+					<label>Categorias: </label>
+					<select name="categoria">
+						<option value="-----">-----</option>
+						@foreach($categorias as $keyC => $categoria)
+							<option value="{{$categoria->categoria}}">{{$categoria->categoria}}</option>
+						@endforeach
+					</select>
+					<input class="btn btn-primary" type="submit" name="cat" value="Enviar">
+				</form>
+			</div>
+		</div> 
 		<div class="row row-bottom-padded-sm">
+
 			@foreach($arrayNoticiasT as $keyT => $noticiaT)
-				<div class="col-md-6">
-					<p><img src="{{$noticiaT->img}}" width="400px" class="img-responsive img-bordered"></p>
+				@if ($cat == $noticiaT->categoria or $cat == '-----')
+					@if($dateS <= $noticiaT->created_at and $date >= $noticiaT->created_at )
+						<div class="col-md-6">
+							<p><img src="{{$noticiaT->img}}" width="400px" class="img-responsive img-bordered"></p>
+						</div>
+						<div class="col-md-6 padded-top">
+							<h3>{{$noticiaT->titulo}}</h3>
+							<p>{{$noticiaT->descripcion}}</p>
+						</div>
+					@endif
+				@endif
+			@endforeach	
 				</div>
-				<div class="col-md-6 padded-top">
-					<h3>{{$noticiaT->titulo}}</h3>
-					<p>{{$noticiaT->descripcion}}</p>
-				</div>
-			@endforeach
 		</div>
 		
 		<div class="row row-bottom-padded-sm">
 		@foreach($arrayNoticiasF as $keyF => $noticiaF)
-			<div class="col-md-4">
-				<div class="fh5co-service text-center">
-					<span><img src="{{$noticiaF->img}}" width="300px"></img></span>
-					<h3>{{$noticiaF->titulo}}</h3>
-					<p>{{$noticiaF->descripcion}}</p>
+			@if ($cat == $noticiaF->categoria or $cat == '-----')
+				<div class="col-md-4">
+					<div class="fh5co-service text-center">
+						<span><img src="{{$noticiaF->img}}" width="300px"></img></span>
+						<h3>{{$noticiaF->titulo}}</h3>
+						<p>{{$noticiaF->descripcion}}</p>
+					</div>
 				</div>
-			</div>
+			@endif
 		@endforeach
 		</div>
 

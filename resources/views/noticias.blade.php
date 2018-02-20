@@ -33,6 +33,5 @@
 
 	</div>
 </div>
-<script>var categories = ['hola','qe','tal'];</script>
 <script src="{{ asset('js/noticias-script.js') }}"></script>
 @stop

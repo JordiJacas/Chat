@@ -67,20 +67,13 @@ class CreateTablesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('categorias', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nom');
-            $table->timestamps();
-        });
-
         Schema::create('noticias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo')->required();
-            $table->string('descripcion', 5000)->required();
+            $table->string('descripcion',5000)->required();
             $table->string('img')->nullable();
             $table->boolean('prioritario')->default(0);
-            $table->integer('n_categoria')->default(1)->unsigned();
-            $table->foreign('n_categoria')->references('id')->on('categorias')->onDelete('cascade');
+            $table->string('categoria')->default('Sin categoria');
             $table->timestamps();
         });
 

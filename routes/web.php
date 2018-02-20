@@ -15,10 +15,12 @@
 //     return view('welcome');
 // });
 
+
 Route::get('/','ChatController@getWelcome')->name('home');
 
-Auth::routes();
+Route::post('/','CategoriasController@store');
 
+Auth::routes();
 Route::get('/home', 'ChatController@getWelcome');
 
 //Denuncias
