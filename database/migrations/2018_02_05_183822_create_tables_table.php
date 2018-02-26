@@ -21,14 +21,6 @@ class CreateTablesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('debates', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('descripcion');
-            $table->integer('id_usuario')->unsigned();
-            $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
-        });
-
         Schema::create('denuncias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descripcion');
@@ -62,8 +54,8 @@ class CreateTablesTable extends Migration
             $table->string('descripcion');
             $table->integer('id_usuario')->unsigned();
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('id_debate')->unsigned();
-            $table->foreign('id_debate')->references('id')->on('debates')->onDelete('cascade');
+            $table->integer('id_denuncia')->unsigned();
+            $table->foreign('id_denuncia')->references('id')->on('denuncias')->onDelete('cascade');
             $table->timestamps();
         });
 

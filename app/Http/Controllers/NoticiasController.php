@@ -28,6 +28,7 @@ class NoticiasController extends Controller
         $n->img = $name;
 
     	$n->save();
+        
         return view('noticias');
     }
 }

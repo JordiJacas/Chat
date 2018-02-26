@@ -15,10 +15,6 @@
 				<form action="{{url('denuncia')}}" method="post" enctype="multipart/form-data">
 				{{csrf_field()}}
 					<div class="form-group">
-						<label for="name">Nombre</label>
-						<input name="nombre" type="text" class="form-control" id="name">
-					</div>
-					<div class="form-group">
 						<label for="message">Mensaje</label>
 						<textarea style="resize: none" name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
 					</div>
@@ -48,23 +44,41 @@
 				
 			</div>
 			<div class="row row-bottom-padded-sm">
-					<div class="col-md-8 col-md-offset-2 text-center ts-intro">
-						<h1>Denuncia Realizadas</h1>
-					</div>
+				<div class="col-md-8 col-md-offset-2 text-center ts-intro">
+					<h1>Denuncia Realizadas</h1>
 				</div>
-				<?php
-					$denuncias = DB::table('denuncias')->get();
-					foreach ($denuncias as $denuncia) {
-						# code...
-						echo "<div class='col-md-4 text-center' style='display: inline-block;'>
-							<p>".$denuncia->descripcion."</p>
-							<br><img src='".$denuncia->img."' width='300px' height='200px'>
-							<hr>
-							</div>";
-					}
-				?>
+			</div>
+
+				@foreach($arrayDenuncias as $key => $denuncia)
+					<div class='col-md-4' style='display: inline-block;'>
+						<p class="text-center">{{$denuncia->descripcion}}</p>
+						<br><img src='{{$denuncia->img}}' width='300px' height='200px'>
+						<br>
+
+						<button class="btn btn-primary">Respuestas</button>
+						<hr>
+						@foreach($arrayRespuesta as $key => $respuesta)
+							@if($respuesta->id_denuncia == $denuncia->id)
+								<div class="form-group respuestasDenuncia">
+									{{$respuesta->descripcion}}
+								</div>
+							@endif
+						@endforeach
+						<hr>
+						@if( Auth::user()->admin == 1)
+							<form action="respuesta_denuncia" method="post">
+							{{csrf_field()}}
+								<input type="text" name="id_denuncia" style="display:none;" value="{{$denuncia->id}}">
+								<textarea style="resize: none" class="form-control" name="texto_respuesta"></textarea>
+								<br>
+								<input class="btn btn-primary" type="submit" name="submit_respusta" value="Responder">
+							</form>
+						@endif
+					</div>
+				@endforeach
 		</div>
 		</div>
 	</div>
 </div>
+<script src="{{ asset('js/denuncia-script.js') }}"></script>
 @stop

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Denuncia;
+use App\Respuesta;
 use Illuminate\Support\Facades\Auth;
 
-class DenunciasController extends Controller
+class RespuestaController extends Controller
 {
     public function index(){
         return view('denuncia');
@@ -14,16 +14,13 @@ class DenunciasController extends Controller
 
     public function store(Request $request){
 
-    	$f = new Denuncia();
+    	$f = new Respuesta();
 		$f->id_usuario = Auth::id();
-    	$f->descripcion = $request->input('message');
-        $ruta = 'App/denuncia';
-        $name = $request->file('img')->move($ruta);
-        $f->img = $name;
+    	$f->descripcion = $request->input('texto_respuesta');
+    	$f->id_denuncia = $request->input('id_denuncia');
     	$f->save();
 
         return redirect('denuncia');
 
     }
 }
-

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Noticia;
+use App\Denuncia;
 use Carbon\Carbon;
+use App\Respuesta;
 
 class ChatController extends Controller
 {
@@ -22,7 +24,9 @@ class ChatController extends Controller
 
 	public function getDenuncia()
 	{
-   		return view('denuncia');
+		$denuncias = Denuncia::all();
+		$respuesta = Respuesta::all();
+   		return view('denuncia',["arrayDenuncias"=>$denuncias, "arrayRespuesta"=>$respuesta]);
 	}
 
 	public function getDebate()
