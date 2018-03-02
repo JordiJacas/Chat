@@ -18,7 +18,7 @@
                <ul class="list-unstyled">
 
                @foreach($chats as $keyC => $chat)             
-                  <li id="{{$chat->id}}" onclick="printar({{$chat->id}})" class="left clearfix">
+                  <li id="{{$chat->id}}" onclick="printar({{$chat->id}},{{Auth::user()->id}})" class="left clearfix">
                      <span class="chat-img pull-left">
                         <img src="{{ asset('img/avatar.png') }}" alt="User Avatar" class="img-circle">
                      </span>
@@ -46,11 +46,6 @@
   <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ajustes
     <span class="caret"></span>
   </button>
-  <!--<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-      <li><a href="#" onclick="crearChatroom()">Nueva ChatRoom</a></li>
-      <li><a href="#">Invitar</a></li>
-      <li><a href="#">Salir</a></li>
-  </ul>-->
 </div></div>
          </div><!--new_message_head-->
          

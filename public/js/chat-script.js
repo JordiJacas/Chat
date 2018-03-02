@@ -72,38 +72,43 @@ $(document).ready(function() {
 }) 
 //end Funcion Ajax
 
-function printar(id){
+function printar(idChat, idUser){
 	clearInterval(stop);
-	$('#classroom_id').val(id);
+	$('#classroom_id').val(idChat);
 	stop = setInterval(function(){
 		$.getJSON("/api/mensajes", function(datos){
 			datos.reverse();
-			limpiar();	
+			limpiar();
+
 			for(var i=0; i<datos.length;i++){
-				if(id == JSON.stringify(datos[i].id_chat)){
-					if(JSON.stringify(datos[i].id_usuario) == "3"){
-						var user_name = JSON.stringify(datos[i].id_usuario);
+				if(idChat == JSON.stringify(datos[i].id_chat)){
+
+					if(JSON.stringify(datos[i].id_usuario) == idUser){
+						var user_name = JSON.stringify(datos[i].name_user);
 						var mensaje = JSON.stringify(datos[i].descripcion);
 						var dia_hora = JSON.stringify(datos[i].created_at);
 						var newimg = $('<img src="http://localhost:8000/img/avatar.png" alt="User Avatar" class="img-circle"></img>');
 						var txtimg = user_name;
 						var newspan = $('<span class="chat-img1 pull-left"></span>').append(newimg).append(txtimg);
-						var newp = $('<p style="background-color: magenta;"></p>').text(mensaje);
+						var newp = $('<p></p>').text(mensaje);
+						var newbr = $('<br>');
 						var newdiv2 = $('<div class="chat_time pull-right"></div>').text(dia_hora);
-						var newdiv1 = $('<div class="chat-body1 clearfix"></div>').append(newp).append(newdiv2);
-						var newli = $('<li id="newli" class="left clearfix"></li>').append(newspan).append(newdiv1);
-						$('#ul').append(newli);	
+						var newdiv1 = $('<div"></div>').append(newbr).append(newp).append(newdiv2);
+						var newli = $('<li id="newli" style="background-color: #9af86d;  border-radius: 25px; margin:15px 15px 15px 15px;" class="right clearfix"></li>').append(newspan).append(newdiv1);
+						$('#ul').append(newli);
 					}else{
-						var user_name = JSON.stringify(datos[i].id_usuario);
+						//diferente estilo
+						var user_name = JSON.stringify(datos[i].name_user);
 						var mensaje = JSON.stringify(datos[i].descripcion);
 						var dia_hora = JSON.stringify(datos[i].created_at);
 						var newimg = $('<img src="http://localhost:8000/img/avatar.png" alt="User Avatar" class="img-circle"></img>');
 						var txtimg = user_name;
-						var newspan = $('<span class="chat-img1 pull-left"></span>').append(newimg).append(txtimg);
-						var newp = $('<p style="background-color: green;"></p>').text(mensaje);
-						var newdiv2 = $('<div class="chat_time pull-right"></div>').text(dia_hora);
-						var newdiv1 = $('<div class="chat-body1 clearfix"></div>').append(newp).append(newdiv2);
-						var newli = $('<li id="newli" class="left clearfix"></li>').append(newspan).append(newdiv1);
+						var newspan = $('<span class="chat-img1 pull-right"></span>').append(txtimg).append(newimg);
+						var newp = $('<p class="text-right" ></p>').text(mensaje);
+						var newbr = $('<br>');
+						var newdiv2 = $('<div class="chat_time pull-left"></div>').text(dia_hora);
+						var newdiv1 = $('<div"></div>').append(newbr).append(newp).append(newdiv2);
+						var newli = $('<li id="newli" style="background-color: pink; border-radius: 25px; margin:15px 15px 15px 15px;" class="left clearfix"></li>').append(newspan).append(newdiv1);
 						$('#ul').append(newli);
 					}
 				} 
@@ -113,6 +118,10 @@ function printar(id){
 
 
 }
+
+
+
+
 //funcion limpieza
 
 function limpiar(){

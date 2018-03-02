@@ -43,6 +43,7 @@ class CreateTablesTable extends Migration
             $table->increments('id');
             $table->string('descripcion');
             $table->integer('id_usuario')->unsigned();
+            $table->string('name_user');
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
             $table->integer('id_chat')->unsigned();
             $table->foreign('id_chat')->references('id')->on('chats')->onDelete('cascade');
