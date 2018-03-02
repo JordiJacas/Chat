@@ -67,21 +67,34 @@ class DatabaseSeeder extends Seeder
         array(
             'name' => 'Admin',
             'email' => 'admin@admin.com',
-            'psswd'=>'123456',
+            'psswd'=>'$2y$10$sMFfh7Q0M9D/xK8T/r5uveH07Rb6lzTc9fNYAxfgtZWugOkM./pcC',
             'admin'=>1,
             ),
         array(
-            'name' => 'User',
-            'email' => 'user@admin.com',
-            'psswd'=>'123456',
+            'name' => 'user',
+            'email' => 'user@user.com',
+            'psswd'=>'$2y$10$2jFhfKlJTjCpn/gRJB5xjeX/zmu52bsjLvRvQjM60zI22VxnzRgrO',
             'admin'=>0,
             ));
 
     private $arrayChat = array(
-        array(
-            'descripcion' => 'El consistori fixa en 2.528.834 euros la quantitat a pagar per la administració autonòmica, en compliment dels convenis dels cursos 2015-16, 2016-17 i, de la actual, 2017-18',
+         array(
+            'descripcion' => 'Alfonso V',
             'id_user'=>1,
-            ));
+            ),
+        array(
+            'descripcion' => 'Juana I',
+            'id_user'=>1,
+            ),
+        array(
+            'descripcion' => 'Amadeo I',
+            'id_user'=>1,
+            ),
+        array(
+            'descripcion' => 'Luis I',
+            'id_user'=>1,
+            )
+        );
 
     private $arrayNoticias = array(
         array(

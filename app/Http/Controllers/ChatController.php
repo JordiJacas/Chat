@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Noticia;
 use App\Denuncia;
+use App\Chat;
 use Carbon\Carbon;
 use App\Respuesta;
 
@@ -44,6 +45,8 @@ class ChatController extends Controller
    		return view('noticias');
 	}
 	public function getChat(){
-		return view('chat');
+
+		$chats = Chat::all();
+		return view('chat',["chats"=>$chats]);
 	}
 }

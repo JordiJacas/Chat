@@ -17,7 +17,7 @@ class MensajeController extends Controller
     	$f = new Mensaje();
 		$f->id_usuario = Auth::id();
     	$f->descripcion = $request->input('mensaje');
-    	$f->id_chat = "1";
+    	$f->id_chat = $request->input('id_chat');
     	$f->save();
         //return view('chat');
         return json_encode($request->input('mensaje'));

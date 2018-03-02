@@ -16,13 +16,15 @@
             </div>
             <div class="member_list">
                <ul class="list-unstyled">
-                  <li onclick="printar()" class="left clearfix">
+
+               @foreach($chats as $keyC => $chat)             
+                  <li id="{{$chat->id}}" onclick="printar({{$chat->id}})" class="left clearfix">
                      <span class="chat-img pull-left">
-                     <img src="{{ asset('img/avatar.png') }}" alt="User Avatar" class="img-circle">
+                        <img src="{{ asset('img/avatar.png') }}" alt="User Avatar" class="img-circle">
                      </span>
                      <div class="chat-body clearfix">
                         <div class="header_sec">
-                           <strong id="room1" name="Alfonso V" class="primary-font">Alfonso V</strong>
+                           <strong id="{{$chat->id}}" name="{{$chat->descripcion}}" class="primary-font">{{$chat->descripcion}}</strong>
                            <strong class="pull-right">09:30</strong>
                         </div>
                         <div class="contact_sec">
@@ -30,48 +32,7 @@
                         </div>
                      </div>
                   </li>
-                  <!--<li onclick="accederChatroom()" class="left clearfix">
-                     <span class="chat-img pull-left">
-                     <img src="{{ asset('img/avatar.png') }}" alt="User Avatar" class="img-circle">
-                     </span>
-                     <div class="chat-body clearfix">
-                        <div class="header_sec">
-                           <strong id="room2" name="Juana I" class="primary-font">Juana I</strong> <strong class="pull-right">
-                           09:30</strong>
-                        </div>
-                        <div class="contact_sec">
-                           <strong class="primary-font">Ayuntamiento Cornella</strong>
-                        </div>
-                     </div>
-                  </li> 
-                  <li onclick="accederChatroom()" class="left clearfix">
-                     <span class="chat-img pull-left">
-                     <img src="{{ asset('img/avatar.png') }}" alt="User Avatar" class="img-circle">
-                     </span>
-                     <div class="chat-body clearfix">
-                        <div class="header_sec">
-                           <strong id="room3" name="Amadeo I" class="primary-font">Amadeo I</strong> <strong class="pull-right">
-                           09:30</strong>
-                        </div>
-                        <div class="contact_sec">
-                           <strong class="primary-font">Ayuntamiento Cornella</strong>
-                        </div>
-                     </div>
-                  </li>
-                  <li onclick="accederChatroom()" class="left clearfix">
-                     <span class="chat-img pull-left">
-                     <img src="{{ asset('img/avatar.png') }}" alt="User Avatar" class="img-circle">
-                     </span>
-                     <div class="chat-body clearfix">
-                        <div class="header_sec">
-                           <strong id="room4" name="Luis I" class="primary-font">Luis I</strong> <strong class="pull-right">
-                           09:30</strong>
-                        </div>
-                        <div class="contact_sec">
-                           <strong class="primary-font">Ayuntamiento Cornella</strong>
-                        </div>
-                     </div>
-                  </li>--> 
+               @endforeach
                </ul>
             </div></div>
          </div>
@@ -101,13 +62,14 @@
                   BotAyuntamiento
 	            </span>
 		        <div class="chat-body1 clearfix">
-	              <br><p>Bienvenidos a la ChatRoom Alfonso V</p>
+	              <br><p>En este momento no estas en ninguna ChatRoom.</p>
 		           <div class="chat_time pull-right">09:30</div>
 	            </div>
 	        </li>
          </ul>
          </div><!--chat_area-->
           <div class="message_write">
+            <input name="id_chat" type="text" id="classroom_id" hidden="true"></input>
             <textarea name="mensaje" id="mensaje" class="form-control" placeholder="Escribe un mensaje"></textarea>
             <div class="clearfix"></div>
             <div class="chat_bottom">
