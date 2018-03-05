@@ -18,6 +18,7 @@ class ChatController extends Controller
 				->where('created_at','<=', $date)
 				->update(['prioritario'=>'0']);
 
+		$cat = '-----';
 		$noticiasF = Noticia::orderBy('created_at','desc')->where('prioritario', 0)->get();
 		$categorias = Noticia::distinct()->get(['categoria']);
 		$noticiasT = Noticia::orderBy('created_at','desc')->where('prioritario', 1)->get();
