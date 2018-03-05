@@ -11,7 +11,12 @@
 			</div>
 		</div>
 		<div class="row row-bottom-padded-sm">
-			<div class="col-md-6" id="fh5co-content">
+			<div class="col-md-6" id="fh5co-content"><
+				<div class="form-group">
+					<label for="message">Direccion</label>
+					<input id="pac-input" type="text" placeholder="Search Box">
+					<div id="map"></div>
+				</div>
 				<form action="{{url('denuncia')}}" method="post" enctype="multipart/form-data">
 				{{csrf_field()}}
 					<div class="form-group">
@@ -25,6 +30,10 @@
 							</div>
 						</div>
 					</div>
+
+					<input id="loc-cord" type="text" name="latLng" hidden="true">
+					<input id="loc-nombre" type="text" name="nombreCalle" hidden="true">
+
 					<div class="form-group">
 						<button type="submit" name="submit" class="btn btn-primary">Submit</button>
 						<button class="btn btn-default" type="reset">Reset</button>
@@ -52,6 +61,8 @@
 				@foreach($arrayDenuncias as $key => $denuncia)
 					<div class='col-md-4' style='display: inline-block;'>
 						<p class="text-center">{{$denuncia->descripcion}}</p>
+						<p class="text-center">{{$denuncia->nombreCalle}}</p>
+						<p class="text-center">{{$denuncia->latLng}}</p>
 						<br><img src='{{$denuncia->img}}' width='300px' height='200px'>
 						<br>
 
@@ -81,4 +92,7 @@
 	</div>
 </div>
 <script src="{{ asset('js/denuncia-script.js') }}"></script>
+<script src="{{ asset('js/geolocalizacion.js') }}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASZ2UNkk7VIKT4oNTod5gF17uO2Ma-2Zc&libraries=places&callback=initAutocomplete"
+         async defer></script>
 @stop

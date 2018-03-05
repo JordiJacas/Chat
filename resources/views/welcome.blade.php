@@ -40,7 +40,6 @@
 
 			@foreach($arrayNoticiasT as $keyT => $noticiaT)
 				@if ($cat == $noticiaT->categoria or $cat == '-----')
-					@if($dateS <= $noticiaT->created_at and $date >= $noticiaT->created_at )
 						<div class="col-md-6">
 							<p><img src="{{$noticiaT->img}}" width="400px" class="img-responsive img-bordered"></p>
 						</div>
@@ -48,7 +47,6 @@
 							<h3>{{$noticiaT->titulo}}</h3>
 							<p>{{$noticiaT->descripcion}}</p>
 						</div>
-					@endif
 				@endif
 			@endforeach	
 				</div>

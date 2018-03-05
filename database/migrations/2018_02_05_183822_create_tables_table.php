@@ -24,6 +24,8 @@ class CreateTablesTable extends Migration
         Schema::create('denuncias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descripcion');
+            $table->string('latLng');
+            $table->string('nombreCalle');
             $table->string('img');
             $table->integer('id_usuario')->unsigned();
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');

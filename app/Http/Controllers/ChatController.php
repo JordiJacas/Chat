@@ -13,9 +13,11 @@ class ChatController extends Controller
 {
     public function getWelcome()
 	{	
-		$dateHoy = Carbon::now();
-		$dateS = Carbon::now()->subDays(7);
-		$cat = '-----';
+		$date = Carbon::now()->subDays(7);
+		Noticia::where('prioritario', '1')
+				->where('created_at','<=', $date)
+				->update(['prioritario'=>'0']);
+
 		$noticiasF = Noticia::orderBy('created_at','desc')->where('prioritario', 0)->get();
 		$categorias = Noticia::distinct()->get(['categoria']);
 		$noticiasT = Noticia::orderBy('created_at','desc')->where('prioritario', 1)->get();
