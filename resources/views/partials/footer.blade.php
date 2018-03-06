@@ -14,7 +14,6 @@
 						<li><a href="/">Home</a></li>
 						<li><a href="debate">Debates</a></li>
 						<li><a href="denuncia">Denuncias</a></li>
-						<li><a href="intercanbio">Intercambios</a></li>
 					</ul>
 				</div>
 			</div>

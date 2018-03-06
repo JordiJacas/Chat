@@ -13,7 +13,6 @@
 							<ul>
 								<li><a href="iSession">Debates</a></li>
 								<li><a href="iSession">Denuncias</a></li>
-								<li><a href="iSession">Intercambios</a></li>
 								<li><a href="iSession">Chat</a></li>
 							</ul>
 						</div>
@@ -45,7 +44,6 @@
 							<ul>
 								<li><a href="debate">Debates</a></li>
 								<li><a href="denuncia">Denuncias</a></li>
-								<li><a href="intercambio">Intercambios</a></li>
 								<li><a href="chat">Chat</a></li> 
 								@if( Auth::user()->admin == 1)
 								<li><a href="noticia">Crear Noticia</a></li>
