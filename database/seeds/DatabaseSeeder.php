@@ -120,11 +120,7 @@ class DatabaseSeeder extends Seeder
             ),
         array(
             'titulo'=>'Conferència: Jaume I el Conqueridor',
-            'descripcion' => 'Conferència sobre aquest sobirà que va ampliar de manera extraordinària els territoris de la Corona de Aragó durant els 58 anys que regnà en el segle XIII.
-                    Dia: 01/02/18
-                    Hora: 19h
-                    Lloc: sala Titan
-                    A càrrec de David González Dins del cicle "Els dijous amb història" organitzat per Òmnium Cultural',
+            'descripcion' => 'Conferència sobre aquest sobirà que va ampliar de manera extraordinària els territoris de la Corona de Aragó durant els 58 anys que regnà en el segle XIII.Dia: 01/02/18 Hora: 19h Lloc: sala Titan A càrrec de David González Dins del cicle "Els dijous amb història" organitzat per Òmnium Cultural',
             'img'=>'App/noticias/Marta_Mata.JPG',
             'prioritario'=>1,
             'categoria'=>'Sin Categoria'
