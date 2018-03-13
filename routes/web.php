@@ -55,11 +55,8 @@ Route::post('chat', 'MensajeController@store');
 
 Route::post('storage/create', 'MensajeController@save');
 
-//ChatRoom
-/*
-Route::get('chat', 'ChatController@getChat')->name('chat');
+//Editar Noticias
 
-Route::post('chat', 'ChatRoomController@store');
+Route::get('editarNoticia/{id}', 'NoticiasController@getEditar');
 
-Route::post('storage/create', 'ChatRoomController@save');
-*/
+Route::get('actualizar/{id}', 'NoticiasController@update');

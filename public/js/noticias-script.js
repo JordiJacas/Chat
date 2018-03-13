@@ -30,7 +30,7 @@ function crearCampos(id,texto,type,name){
 		var campo = $(div).append(label,input);
 	}else if(type == 'text'){
 
-		var input = '<input name="'+name+'" type="'+type+'" class="form-control" id="'+id+'">';
+		var input = "<input value='{{$noticia->titulo}}' name='"+name+"' type='"+type+"' class='form-control' id='"+id+"'>";
 		var campo = $(div).append(label,input);	
 	}
 	return campo;

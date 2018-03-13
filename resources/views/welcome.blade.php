@@ -37,7 +37,6 @@
 			</div>
 		</div> 
 		<div class="row row-bottom-padded-sm">
-
 			@foreach($arrayNoticiasT as $keyT => $noticiaT)
 				@if ($cat == $noticiaT->categoria or $cat == '-----')
 						<div class="col-md-6">
@@ -49,21 +48,20 @@
 						</div>
 				@endif
 			@endforeach	
-				</div>
 		</div>
-		
-		<div class="row row-bottom-padded-sm">
-		@foreach($arrayNoticiasF as $keyF => $noticiaF)
-			@if ($cat == $noticiaF->categoria or $cat == '-----')
-				<div class="col-md-4">
-					<div class="fh5co-service text-center">
-						<span><img src="{{$noticiaF->img}}" width="300px"></img></span>
-						<h3>{{$noticiaF->titulo}}</h3>
-						<p>{{$noticiaF->descripcion}}</p>
-					</div>
-				</div>
-			@endif
-		@endforeach
+	</div>
+		<div class="row row-bottom-padded-sm" >
+			@foreach($arrayNoticiasF as $keyF => $noticiaF)
+				@if ($cat == $noticiaF->categoria or $cat == '-----')
+					<a class="col-md-4" href="{{ url('editarNoticia/'.$noticiaF->id)}}">
+						<div class="fh5co-service text-center">
+							<span><img src="{{$noticiaF->img}}" width="300px"></img></span>
+							<h3>{{$noticiaF->titulo}}</h3>
+							<p>{{$noticiaF->descripcion}}</p>
+						</div>
+					</a>
+				@endif
+			@endforeach
 		</div>
 
 		<div class="row row-bottom-padded-sm">
@@ -94,8 +92,6 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>
-
 @stop

@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Noticia;
 use Illuminate\Support\Facades\Auth;
+
 class NoticiasController extends Controller
 {
     
@@ -30,5 +31,40 @@ class NoticiasController extends Controller
     	$n->save();
         
         return view('noticias');
+    }
+
+    public function getEditar($id){
+
+        $noticia = Noticia::findOrFail($id);
+        return view('editNoticia',['noticia'=>$noticia]);
+    }
+
+    public function update($id, Request $request){
+        $titulo = $request->input('titulo');
+        $descripcion = $request->input('descripcion');
+        $categoria = ucfirst($request->input('cat'));
+        $ruta = 'App/noticias';
+
+        $name = $request->file('img');
+        if($name != ""){
+            $name = $request->file('img')->move($ruta);
+        }else{
+            $name = $request->input('urlImg');
+        }
+
+        $prioritario = $request->input('check');
+
+        if($prioritario != ""){
+            $prioritario = 1;
+        }else{
+            $prioritario = 0;
+        }
+
+
+
+        Noticia::where('id',$id)->update(['titulo'=>$titulo,'descripcion'=>$descripcion,'categoria'=>$categoria,'img'=>$name,'prioritario'=>$prioritario]);
+        
+
+       return redirect('editarNoticia/'.$id);
     }
 }
