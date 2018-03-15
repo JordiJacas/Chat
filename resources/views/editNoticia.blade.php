@@ -23,16 +23,14 @@
 *creation: 12/09/18
 */
 
-/**
-*Codigo que executa una funcion al cargar la pagina
-*/
-	$(document).ready(crearFormEditar);
 
 /**
  * Devuelve un campo de forumulario creado
  * @param texto {string}
  * @return  texto {string}
  */
+	$(document).ready(crearFormEditar);
+
 	function crearCampos(id,texto,type,name){
 
 		var label = "<label for='"+id+"'>"+texto+"</label>";
@@ -69,6 +67,7 @@
  * @param  {null}
  * @return  {null}
  */
+
 	function crearFormEditar(){
 
 		var cTitulo = crearCampos('titulo', 'Titulo', 'text', 'titulo');
