@@ -18,6 +18,7 @@ class CreateTablesTable extends Migration
             $table->string('descripcion');
             $table->integer('id_usuario')->unsigned();
             $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
+            $table->string('password')->nullable();
             $table->timestamps();
         });
 
@@ -72,7 +73,14 @@ class CreateTablesTable extends Migration
             $table->timestamps();
         });
 
-
+        Schema::create('debates', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('descripcion');
+            $table->string('mensaje');
+            $table->integer('id_usuario')->unsigned();
+            $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**

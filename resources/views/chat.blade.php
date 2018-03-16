@@ -43,10 +43,8 @@
          <div class="row">
          <div class="new_message_head">
          <div class="pull-left">Chat</div><div class="pull-right"><div class="dropdown">
-  <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ajustes
-    <span class="caret"></span>
-  </button>
-</div></div>
+         <button type="button" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Nueva ChatRoom</button>
+         </div></div>
          </div><!--new_message_head-->
          
          <div class="chat_area">
@@ -76,5 +74,6 @@
       </div>
    </div>
 </div>
-<form>
+</form>
+<!--</form>-->
 @stop

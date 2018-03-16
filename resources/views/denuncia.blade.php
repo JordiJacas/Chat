@@ -66,7 +66,7 @@
 						<br><img src='{{$denuncia->img}}' width='300px' height='200px'>
 						<br>
 
-						<button class="btn btn-primary">Respuestas</button>
+						<!--<button class="btn btn-primary">Respuestas</button>-->
 						<hr>
 						@foreach($arrayRespuesta as $key => $respuesta)
 							@if($respuesta->id_denuncia == $denuncia->id)

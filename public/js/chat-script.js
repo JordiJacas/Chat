@@ -1,36 +1,5 @@
 //Funcionalidad del chat
 
-//Funcion crear ChatRoom
-function crearChatroom(){
-	limpiar();
-	
-	var newlabel1 = $('<label></label>').text("Nombre de la ChatRoom");
-	var newinput1 = $('<input name="cr-name" type="text" class="form-control" id="cr-name"></input>');
-	var newbutton = $('<button type="submit" onclick="newChatroom()" name="submit" class="btn btn-primary">Crear</button>');
-	
-	var newform = $('<form id="new-cr" method="post"></form>').append(newlabel1).append(newinput1).append(newbutton);
-	var newli = $('<li class="left clearfix"></li>').append(newform);
-	$('.chat_area').first().append(newli);
-
-}
-
-//Funcion ChatRoom Nueva
-/*function newChatroom(){
-	var cr_name = $('#cr-name').val();
-	var newimg = $('<img src="http://localhost:8000/img/avatar.png" alt="User Avatar" class="img-circle"></img>');
-	var newspan = $('<span class="chat-img pull-left"></span>').append(newimg);
-	var newstrong1 = $('<strong class="primary-font"></strong>').text(cr_name);
-	var newstrong2 = $('<strong class="pull-right"></strong>').text('10:30');
-	var newstrong3 = $('<strong class="primary-font"></strong>').text('Jacas');
-	var newdiv3 = $('<div class="contact_sec"></div>').append(newstrong3);
-	var newdiv2 = $('<div class="header_sec"></div>').append(newstrong1).append(newstrong2);
-	var newdiv1 = $('<div class="chat-body clearfix"></div>').append(newdiv2).append(newdiv3);
-	var newli = $('<li onclick="accederChatroom(this)" class="left clearfix"></li>').append(newspan).append(newdiv1);
-
-	$('.member_list').first().append(newli);
-	limpiar();
-}*/
-
 //Funcion ChatRoom de Barrios
 
 function accederChatroom(){

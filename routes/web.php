@@ -34,9 +34,16 @@ Route::post('storage/create', 'DenunciasController@save');
 Route::post('respuesta_denuncia','RespuestaController@store');
 
 //Debates
+Route::post('debate', 'DebateController@store');
 
 Route::get('debate', 'ChatController@getDebate')->name('debate');
 
+Route::post('storage/create', 'DebateController@save');
+
+//Route::post('respuesta_debate','RespuestaController@store');
+
+
+//Route::post('respuesta_denuncia','RespuestaController@store');
 //Sesion
 
 Route::get('iSession', 'ChatController@getSession')->name('iSession');
